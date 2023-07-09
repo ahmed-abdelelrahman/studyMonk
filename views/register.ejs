@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <Link rel="stylesheet" href="../main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script defer src="../main.js"></script>
+  </head>
+  <body>
+    <div
+      id="createAccount"
+      class="flex min-h-screen items-center justify-center bg-white dark:bg-gray-950 p-12"
+    >
+      <% if(messages.error){ %>
+      <div class="form__message form__message--error">
+        <%= messages.error %>
+      </div>
+      <% } %>
+      <form
+        method="POST"
+        action="/register"
+        class="flex-col border-2 border-sky-500 items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10"
+      >
+        <p
+          class="w-full text-4xl font-medium text-center leading-snug font-serif"
+        >
+          Sign up for an account
+        </p>
+        <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+          <div class="relative">
+            <p
+              class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
+            >
+              Username
+            </p>
+            <input
+              placeholder="John"
+              type="text"
+              name="name"
+              class="form--input border placeholder-gray-400 focus:outline-none focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
+            />
+          </div>
+
+          <div class="relative">
+            <p
+              class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
+            >
+              Email
+            </p>
+            <input
+              placeholder="123@ex.com"
+              type="text"
+              name="email"
+              class="form--input border placeholder-gray-400 focus:outline-none focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
+            />
+          </div>
+
+          <div class="relative">
+            <p
+              class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
+            >
+              Password
+            </p>
+            <input
+              placeholder="Password"
+              type="password"
+              name="password"
+              class="form--input border placeholder-gray-400 focus:outline-none focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
+            />
+          </div>
+
+          <div class="relative">
+            <p
+              class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
+            >
+              Confirm password
+            </p>
+            <input
+              placeholder="Confirm passwrod"
+              type="password"
+              name="confirmPasswrod"
+              class="form--input border placeholder-gray-400 focus:outline-none focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
+            />
+          </div>
+
+          <div id="signup" class="relative">
+            <button
+              type="Submit"
+              class="cursor-pointer w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500 rounded-lg transition duration-200 hover:bg-indigo-600 ease"
+            >
+              Submit
+            </button>
+          </div>
+          <p
+            id="linkLogin"
+            class="text-sm tracking-wide text-gray-600 dark:text-gray-300"
+          >
+            <a
+              href="login"
+              class="text-blue-600 transition duration-200 hover:underline dark:text-blue-400"
+              >Already have an account? Sign in</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
